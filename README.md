@@ -33,3 +33,7 @@ As opposed to predicting the trend in short-term which is used in the high-frequ
 The intended outcome of this project is to produce a practical trading model that can accurately predict the stock price trend in the long-term (weekly basis). <br/>
 
 Additionally, if time permits, we hope to build a user interface on top of the produced model which non-technical users can easily access and utilize through their web browsers.
+
+## 4. References
+- [Stock Price Forecasting using Machine Learning Supervised Methods, Sharvil Katariya and Saurabh Jain](https://github.com/scorpionhiccup/StockPricePrediction/blob/master/Report.pdf)
+- [How can machine learning help stock investment?, Xin Guo](http://cs229.stanford.edu/proj2015/009_report.pdf)
