@@ -3,7 +3,6 @@ from textblob import TextBlob
 import csv
 
 def analyze_json(year, month):
-    "Save as pandas dataframe"
     file_str = 'jsons/' + str(year) + '-' + '{:02}'.format(month) + '.json'
     with open(file_str) as data_file:    
         NYTimes_data = json.load(data_file)
