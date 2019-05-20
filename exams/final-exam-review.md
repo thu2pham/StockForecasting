@@ -10,11 +10,11 @@
 ---
 
 ## Sampling (With Replacement, Without Replacement, Stratified).
-- In **sample with replacement**, the two sample values are independent. Practically, this means that what we get on the first one doesn't affect what we get on the second. Mathematically, this means that the covariance between the two is zero.
+- In **sample with replacement**, the two sample values are independent. Practically, this means that what we get on the first one doesn't affect what we get on the second. Mathematically, this means that the covariance between the two is zero. When sampling is performed with replacement, it’s called bagging
 
-- In **sampling without replacement**, the two sample values aren't independent. Practically, this means that what we got on the for the first one affects what we can get for the second one. Mathematically, this means that the covariance between the two isn't zero. 
+- In **sampling without replacement**, the two sample values aren't independent. Practically, this means that what we got on the for the first one affects what we can get for the second one. Mathematically, this means that the covariance between the two isn't zero. When sampling is performed without replacement, it’s called pasting.
 
-- In **stratified sampling**, the researcher divides the population into separate groups, called strata. Then, a probability sample (often a simple random sample ) is drawn from each group. Stratified sampling has several advantages over simple random sampling.
+- In **stratified sampling**, the researcher divides the population into separate groups, called strata. Then, a probability sample (often a simple random sample ) is drawn from each group to guarantee the test set is representative of the overall population. Stratified sampling has several advantages over simple random sampling.
 
 [[1](https://web.ma.utexas.edu/users/parker/sampling/repl.htm)] [[2](https://stattrek.com/statistics/dictionary.aspx?definition=stratified_sampling)]
 
@@ -22,7 +22,7 @@
 
 ## Model Overfitting/Underfitting
 ### Overfitting
-Overfitting refers to a model that models the training data too well.
+Overfitting refers to a model that performs well on training data but does not generalize well.
 
 Overfitting happens when a model learns the detail and noise in the training data to the extent that it negatively impacts the performance of the model on new data. This means that the noise or random fluctuations in the training data is picked up and learned as concepts by the model. The problem is that these concepts do not apply to new data and negatively impact the models ability to generalize.
 
@@ -30,12 +30,22 @@ Overfitting is more likely with nonparametric and nonlinear models that have mor
 
 For example, decision trees are a nonparametric machine learning algorithm that is very flexible and is subject to overfitting training data. This problem can be addressed by pruning a tree after it has learned in order to remove some of the detail it has picked up.
 
+Possible solutions are:
+- Simplify the model by selecting one with fewer parameters
+- Gather more training data
+- Reduce noise in the training data (fix data errors, remove outliers etc.)
+
 ### Underfitting
-Underfitting refers to a model that can neither model the training data nor generalize to new data.
+Underfitting refers to a model that can neither model the training data nor generalize to new data (too simple to learn the underlying structure of the data)
 
 An underfit machine learning model is not a suitable model and will be obvious as it will have poor performance on the training data.
 
 Underfitting is often not discussed as it is easy to detect given a good performance metric. The remedy is to move on and try alternate machine learning algorithms. Nevertheless, it does provide a good contrast to the problem of overfitting.
+
+Possible solutions are:
+- Select a more powerful model with more parameters
+- Feed better features to the learning algorithm
+- Reducing the constraints of the model
 
 [[1](https://machinelearningmastery.com/overfitting-and-underfitting-with-machine-learning-algorithms/)]
 
@@ -43,6 +53,7 @@ Underfitting is often not discussed as it is easy to detect given a good perform
 
 ## One Hot Encoding
 One hot encoding is a process by which categorical variables are converted into a form that could be provided to ML algorithms to do a better job in prediction.
+One hot encoding creates new (binary) columns, indicating the presence of each possible value from the original data. After one-hot encoding, we get a matrix of thousands of columns, and the matrix is full of zeros, except for a single 1 per row.
 
 [[1](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)]
 
